@@ -1,8 +1,8 @@
 import json
 import os
 
-from openai import OpenAI
 from dotenv import load_dotenv
+from openai import OpenAI
 
 
 # Load variables from a .env file in the current project directory.
@@ -21,7 +21,7 @@ def create_client():
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
         raise RuntimeError(
-            "OPENROUTER_API_KEY is not set. Set it in your terminal before running this script."
+            "OPENROUTER_API_KEY is missing. Add it to your .env file."
         )
 
     return OpenAI(
